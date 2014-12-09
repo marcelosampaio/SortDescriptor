@@ -19,10 +19,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self executeSort];
+  
+//    NSMutableDictionary *dic=[[NSMutableDictionary alloc]init];
+//    
+//    [dic setObject:@"Um" forKey:@"1"];
+//    [dic setObject:@"Dois" forKey:@"2"];
+//    [dic setObject:@"Tres" forKey:@"3"];
+//    
+//    NSMutableDictionary *dicCopy=[[NSMutableDictionary alloc]initWithDictionary:dic copyItems:YES];
+//
+//    NSLog(@"=%@",[dic objectForKey:@"2"]);
+//
+//    for (NSString *item in dic) {
+//        int key=[item intValue];
+//        NSLog(@"--->item%d  description=%@",key,[dicCopy objectForKey:item]);
+//    }
 
+}
+
+-(void)executeSort {
     // Step 1 - SORT AN ARRAY
     self.sourceArray=[[NSArray alloc]initWithObjects:[[Source alloc]initWithCode:3 codeDescription:@"Three"],[[Source alloc]initWithCode:2 codeDescription:@"Two"],[[Source alloc]initWithCode:4 codeDescription:@"Four"],[[Source alloc]initWithCode:1 codeDescription:@"One"], nil];
-
+    
     
     for (Source *sourceObj in self.sourceArray) {
         NSLog(@"-----> original=%@",sourceObj.codeDescription);
@@ -36,14 +55,12 @@
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
     NSArray *sortedArray;
     sortedArray = [self.sourceArray sortedArrayUsingDescriptors:sortDescriptors];
-
+    
     // Step 3
     for (Source *sourceObj in sortedArray) {
         NSLog(@"######## -> sorted =%@",sourceObj.codeDescription);
     }
     
 }
-
-
 
 @end
