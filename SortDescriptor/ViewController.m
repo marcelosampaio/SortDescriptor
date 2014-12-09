@@ -40,7 +40,7 @@
 
 -(void)executeSort {
     // Step 1 - SORT AN ARRAY
-    self.sourceArray=[[NSArray alloc]initWithObjects:[[Source alloc]initWithCode:3 codeDescription:@"Three"],[[Source alloc]initWithCode:2 codeDescription:@"Two"],[[Source alloc]initWithCode:4 codeDescription:@"Four"],[[Source alloc]initWithCode:1 codeDescription:@"One"], nil];
+    self.sourceArray=[[NSArray alloc]initWithObjects:[[Source alloc]initWithCode:1 codeDescription:@"z"],[[Source alloc]initWithCode:2 codeDescription:@"f"],[[Source alloc]initWithCode:3 codeDescription:@"a"],[[Source alloc]initWithCode:4 codeDescription:@"b"], nil];
     
     
     for (Source *sourceObj in self.sourceArray) {
@@ -58,7 +58,7 @@
     
     // Step 3
     for (Source *sourceObj in sortedArray) {
-        NSLog(@"######## -> sorted =%@",sourceObj.codeDescription);
+        NSLog(@"######## -> sorted = %@",sourceObj.codeDescription);
     }
     
 }
